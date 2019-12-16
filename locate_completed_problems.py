@@ -1,8 +1,10 @@
+import os
 import requests
 import re
 from bs4 import BeautifulSoup
 import json
 import configparser
+from getpass import getpass
 
 home_url = "https://www.pbinfo.ro/"
 login_url = "https://www.pbinfo.ro/login.php"
@@ -49,9 +51,6 @@ def locate_completed_problems(user_data, hw_v):
 
         if login_response.status_code != 200:
             print("Nu ne-am putut autentifica")
-            exit(1)
-        else:
-            print("Autentificat")
         tema = s.get(home_url + "?" + "&".join([str(x) + '=' + str(y) for x, y in hw_v.items()]),
                      cookies=login_response.cookies)
         soup = BeautifulSoup(tema.content.decode('utf-8'), features="lxml")
@@ -74,7 +73,17 @@ def locate_completed_problems(user_data, hw_v):
 
 
 if __name__ == '__main__':
-    config = configparser.ConfigParser()
-    config.read('user_data.ini')
-    locate_completed_problems(config['pbinfo'],
-                              {'pagina': 'teme-rezolvare', 'id': 32882})
+    if os.path.exists('user_data.ini'):
+        config = configparser.ConfigParser()
+        config.read('user_data.ini')
+        user_data = config['pbinfo']
+        del config
+    else:
+        username = input("Username: ")
+        password = getpass()
+        user_data = {
+            'user': username,
+            'parola': password
+        }
+    tema_id = input("Id tema: ")
+    locate_completed_problems(user_data, {'pagina': 'teme-rezolvare', 'id': tema_id})

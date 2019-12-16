@@ -1,0 +1,42 @@
+= PBINFO_Utils
+NonNullDinu
+v1.0, 2019-12-16
+:toc: right
+:icons: font
+
+== Descriere
+O simpla interfata de https://en.wikipedia.org/wiki/Web_scraping[web scraping] pentru https://pbinfo.ro[pbinfo]
+(in mare parte pentru teme) scirsa in Python 3.
+
+== Configurare
+=== Linux
+Rulati in bash:
+[source,bash]
+----
+./configure.sh
+----
+
+=== Windows
+Deschideti un editor si completati cu numele de utilizator si parola dumneavoastra
+[source,ini]
+----
+[pbinfo]
+user=****
+parola=****
+----
+Salvati acest fisier langa sursele .py cu denumirea __user_data.ini__
+
+NOTE: In absenta acestui fisier, datele de logare vor fi cerute de catre program cand este rulat
+
+
+== Cum se ruleaza programele?
+Simplu! Navigati la sursele .py si apelati interpretorul python
+[source,bash]
+----
+python <program>.py
+----
+.Unde <program> este unul dintre urmatoarele:
+* download_sources
+* locate_completed_problems
+
+Trebuie sa furnizati toate datele cerute de program

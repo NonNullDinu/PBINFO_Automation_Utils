@@ -1,3 +1,4 @@
+from getpass import getpass
 import requests
 import re
 import configparser
@@ -48,9 +49,23 @@ def download_sources(user_data, folder, hw_v):
 
 
 if __name__ == '__main__':
+    if os.path.exists('user_data.ini'):
+        config = configparser.ConfigParser()
+        config.read('user_data.ini')
+        user_data = config['pbinfo']
+    else:
+        username = input("Username: ")
+        password = getpass()
+        user_data = {
+            'user': username,
+            'parola': password
+        }
+    id_tema = input("Id tema: ")
     hw_v = {'pagina': 'teme-rezolvare',
-            'id': 32883}
-    folder = 'tema32883'
+            'id': id_tema}
+    folder = input("Folder(Lasati gol pentru default): ")
+    if len(folder) == 0:
+        folder = f"tema{id_tema}"
 
     config = configparser.ConfigParser()
     config.read('user_data.ini')

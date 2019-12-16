@@ -67,6 +67,4 @@ if __name__ == '__main__':
     if len(folder) == 0:
         folder = f"tema{id_tema}"
 
-    config = configparser.ConfigParser()
-    config.read('user_data.ini')
-    download_sources(config['pbinfo'], folder, hw_v)
+    download_sources(user_data, folder, hw_v)

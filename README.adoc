@@ -46,7 +46,7 @@ Unde <program> este unul dintre urmatoarele::
         Cauta intr-o tema toate problemele deja rezolvate, construieste si afiseaza link-uri pentru pagina fiecarei probleme in care editorul are prima sursa de 100p gasita.
         Link-urile sunt de forma:
 
-        https://www.pbinfo.ro/?pagina=probleme&id=****&id_sursa=********#a_editor
+        https://www.pbinfo.ro/probleme/id/nume/?id_sursa=********#a_editor
 
 
 Trebuie sa furnizati toate datele cerute de program

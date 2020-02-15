@@ -48,5 +48,7 @@ Unde <program> este unul dintre urmatoarele::
 
         https://www.pbinfo.ro/probleme/id/nume/?id_sursa=********#a_editor
 
+    prob_statement:::
+        Cauta o problema dupa datele de intrare si scrie pe ecran HTML-ul relevant enuntului in pagina.
 
 Trebuie sa furnizati toate datele cerute de program

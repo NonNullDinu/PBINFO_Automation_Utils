@@ -50,5 +50,7 @@ Unde <program> este unul dintre urmatoarele::
 
     prob_statement:::
         Cauta o problema dupa datele de intrare si scrie pe ecran HTML-ul relevant enuntului in pagina.
+    submit:::
+        Incarca o sursa dintr-un fisier.
 
 Trebuie sa furnizati toate datele cerute de program

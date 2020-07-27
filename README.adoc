@@ -6,7 +6,7 @@ v1.0, 2019-12-16
 
 == Descriere
 O simpla interfata de https://en.wikipedia.org/wiki/Web_scraping[web scraping] pentru https://pbinfo.ro[pbinfo]
-(in mare parte pentru teme) scirsa in Python 3.
+(in mare parte pentru teme) scrisa in Python 3.
 
 WARNING: Aceasta interfata nu a fost scrisa de catre creatorii site-ului Pbinfo
 
@@ -46,7 +46,11 @@ Unde <program> este unul dintre urmatoarele::
         Cauta intr-o tema toate problemele deja rezolvate, construieste si afiseaza link-uri pentru pagina fiecarei probleme in care editorul are prima sursa de 100p gasita.
         Link-urile sunt de forma:
 
-        https://www.pbinfo.ro/?pagina=probleme&id=****&id_sursa=********#a_editor
+        https://www.pbinfo.ro/probleme/id/nume/?id_sursa=********#a_editor
 
+    prob_statement:::
+        Cauta o problema dupa datele de intrare si scrie pe ecran HTML-ul relevant enuntului in pagina.
+    submit:::
+        Incarca o sursa dintr-un fisier.
 
 Trebuie sa furnizati toate datele cerute de program
